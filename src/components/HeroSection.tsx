@@ -20,7 +20,7 @@ const HeroSection = () => {
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="animate-fade-in">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 netflix-text-shadow">
-            Your Name
+            Suriya
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl text-netflix-light-gray mb-8 netflix-text-shadow">
             Creative Developer | Designer | Storyteller
