@@ -49,14 +49,14 @@ const AboutSuriya = () => {
       <div
         className="
           relative z-20 flex flex-col justify-center
-          pl-6 sm:pl-8 md:pl-12 lg:pl-20 xl:pl-28
+          pl-6 sm:pl-10 md:pl-16 lg:pl-24
           pr-4
           py-20
           w-full
-          max-w-[535px]  // Ensures the section never grows beyond just before the center
+          max-w-[50vw]
         "
         style={{
-          // The section stays left of center - never more than ~535px wide
+          // The section stays strictly at or before the center, max 50vw.
         }}
       >
         <span className="uppercase tracking-widest text-xs text-red-600 font-bold mb-2 font-netflix">
@@ -83,3 +83,4 @@ const AboutSuriya = () => {
 };
 
 export default AboutSuriya;
+
