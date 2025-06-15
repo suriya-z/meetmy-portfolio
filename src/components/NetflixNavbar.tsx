@@ -2,10 +2,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-// You can replace logo text with an image if you like
+// Show just the letter "S" like Netflix's "N" logo
 const netflixLogo = (
-  <span className="text-netflix-red font-bold text-3xl tracking-wide font-netflix select-none">
-    NETFLIX
+  <span className="text-netflix-red font-bold text-3xl tracking-wide font-netflix select-none leading-none drop-shadow-[0_2px_8px_rgba(229,9,20,0.75)]">
+    S
   </span>
 );
 
@@ -24,7 +24,7 @@ const NetflixNavbar: React.FC = () => {
 
   return (
     <nav className="w-full bg-[#111] text-white flex items-center px-6 py-2 fixed top-0 left-0 z-50 h-14 shadow-sm border-b border-black/30">
-      {/* Logo */}
+      {/* Logo - S styled like the Netflix N */}
       <div
         className="mr-8 cursor-pointer flex-shrink-0"
         tabIndex={0}
@@ -66,3 +66,4 @@ const NetflixNavbar: React.FC = () => {
 };
 
 export default NetflixNavbar;
+
