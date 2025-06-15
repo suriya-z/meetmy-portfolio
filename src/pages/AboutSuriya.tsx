@@ -34,8 +34,8 @@ const AboutSuriya = () => {
             alt="Portrait"
             className="h-full w-full object-cover"
             style={{
-              // Move the face a bit higher
-              objectPosition: "center 40%",
+              // Move the face even higher
+              objectPosition: "center 30%",
               maskImage:
                 "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
               WebkitMaskImage:
