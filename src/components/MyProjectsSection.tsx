@@ -36,9 +36,27 @@ const numberClasses =
 const MyProjectsSection: React.FC = () => {
   return (
     <section className="relative w-full bg-black py-16 px-0 overflow-x-clip">
+      {/* Neon Curve (SVG) */}
+      <div className="relative w-full h-[34px] flex items-end justify-center select-none mb-2 pointer-events-none z-20">
+        <svg width="100%" height="34" className="block w-full h-[34px] mx-auto" viewBox="0 0 1400 34" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path
+            d="M0,34 Q700,-32 1400,34"
+            stroke="url(#netflix-curve)" strokeWidth="6"
+            fill="none"
+          />
+          <defs>
+            <linearGradient id="netflix-curve" x1="0" y1="0" x2="1400" y2="0" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#ff2c60" />
+              <stop offset="0.4" stopColor="#e50914" />
+              <stop offset="0.6" stopColor="#e50914" />
+              <stop offset="1" stopColor="#ff2c60" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
       <div className="max-w-6xl mx-auto">
         <h2 className="text-white text-3xl sm:text-4xl font-bold mb-8 pl-4">
-          Trending Now
+          My Projects
         </h2>
         <div className="relative">
           {/* Custom horizontal scrolling list */}
@@ -71,7 +89,6 @@ const MyProjectsSection: React.FC = () => {
               </div>
             ))}
           </div>
-          {/* Optional: right arrow for overflow - you can enhance interaction here if desired */}
         </div>
       </div>
     </section>
