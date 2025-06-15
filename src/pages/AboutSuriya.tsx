@@ -16,10 +16,6 @@ const AboutSuriya = () => {
         {/* Right-aligned image, wrapped to crop the top half and reveal face */}
         <div
           className="absolute top-0 bottom-0 right-0 h-full w-[50vw] max-w-[700px] min-w-[320px] overflow-hidden"
-          style={{
-            // Crop to show more of the bottom of the image (face)
-            // (Height set to 140% to push the face into view and crop the top)
-          }}
         >
           <img
             src={portraitImg}
@@ -27,7 +23,6 @@ const AboutSuriya = () => {
             className="h-[140%] w-full object-cover"
             style={{
               objectPosition: "center 88%",
-              // Face is around the lower center, so 88% vertical position
               maskImage:
                 "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
               WebkitMaskImage:
@@ -51,7 +46,19 @@ const AboutSuriya = () => {
       </button>
 
       {/* Content Section */}
-      <div className="relative z-20 flex flex-col justify-center pl-6 sm:pl-12 md:pl-16 lg:pl-28 py-20 w-full max-w-3xl">
+      <div
+        className="
+          relative z-20 flex flex-col justify-center
+          pl-6 sm:pl-8 md:pl-12 lg:pl-20 xl:pl-28
+          pr-4
+          py-20
+          w-full
+          max-w-[535px]  // Ensures the section never grows beyond just before the center
+        "
+        style={{
+          // The section stays left of center - never more than ~535px wide
+        }}
+      >
         <span className="uppercase tracking-widest text-xs text-red-600 font-bold mb-2 font-netflix">
           N SERIES
         </span>
@@ -76,4 +83,3 @@ const AboutSuriya = () => {
 };
 
 export default AboutSuriya;
-
