@@ -20,6 +20,10 @@ export default function ProfileSelection() {
   const navigate = useNavigate();
 
   const handleProfileClick = (name: string) => {
+    if (name === "Kids") {
+      alert("you cant enter if youre under 18 . sorry!");
+      return;
+    }
     setSelectedProfile(name);
   };
 
