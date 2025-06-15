@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -75,6 +74,7 @@ export default {
 			},
 			fontFamily: {
 				'netflix': ['Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+				'greatvibes': ['"Great Vibes"', 'cursive'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
