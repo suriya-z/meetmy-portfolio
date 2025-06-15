@@ -28,14 +28,14 @@ export default function PreloaderModal({ videoUrl, onFinish }: PreloaderModalPro
   }, [onFinish]);
 
   return (
-    <div className="fixed inset-0 z-[1000] bg-black flex items-center justify-center animate-fade-in m-0 p-0 h-screen w-screen">
+    <div className="fixed inset-0 z-[1000] bg-black flex items-center justify-center animate-fade-in">
       <video
         ref={videoRef}
         src={videoUrl}
         autoPlay
         playsInline
         onEnded={onFinish}
-        className="w-screen h-screen object-contain bg-black m-0 p-0"
+        className="fixed inset-0 w-full h-full object-cover bg-black"
         controls={false}
       />
       <span className="sr-only">Loading...</span>
