@@ -37,10 +37,10 @@ const AboutSuriya = () => {
         </h1>
         <div className="flex items-center gap-4 my-2">
           <span className="text-xs font-semibold bg-white/20 text-white px-2.5 py-1 rounded font-netflix">
-            #1 in Web Developers Today
+            Web Developer
           </span>
           <span className="text-xs font-semibold bg-white/16 text-gray-200 px-2 py-1 rounded border border-white/20 font-netflix">
-            2024
+            Web Designer
           </span>
         </div>
         <p className="text-lg text-white max-w-2xl font-medium drop-shadow-md mb-8 font-netflix">
