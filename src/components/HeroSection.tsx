@@ -7,18 +7,25 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Plain Background (No Image) with Overlay */}
-      <div 
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      {/* Red & Black Gradient Background inspired by reference */}
+      <div
         className="absolute inset-0"
         style={{
-          backgroundColor: "#141414", // Netflix black background
+          background: `
+            radial-gradient(circle at 0% 100%, rgba(229,9,20,0.45) 0%, rgba(20,20,20,0.95) 60%, transparent 100%),
+            radial-gradient(circle at 100% 0%, rgba(229,9,20,0.45) 0%, rgba(20,20,20,0.95) 60%, transparent 100%),
+            linear-gradient(120deg, rgba(229,9,20,0.16) 0%, #141414 8%, #141414 92%, rgba(229,9,20,0.18) 100%)
+          `,
         }}
       />
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-netflix-black via-transparent to-transparent" />
-      
+
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="animate-fade-in">
@@ -44,7 +51,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Bottom Fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-netflix-black to-transparent" />
     </section>
