@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Plus, Play, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -21,7 +20,7 @@ export default function ProfileSelection() {
 
   const handleProfileClick = (name: string) => {
     if (name === "Kids") {
-      alert("you cant enter if youre under 18 . sorry!");
+      alert("I need you cant enter inside if you're under 18. sorry!");
       return;
     }
     setSelectedProfile(name);
@@ -86,4 +85,3 @@ export default function ProfileSelection() {
     </main>
   );
 }
-
