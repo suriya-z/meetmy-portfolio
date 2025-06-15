@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ChevronRight, Play } from 'lucide-react';
+import { Scene } from '@/components/ui/rubik-s-cube';
 
 const HeroSection = () => {
   return (
@@ -12,6 +13,9 @@ const HeroSection = () => {
           backgroundImage: `linear-gradient(to right, rgba(20, 20, 20, 0.8), rgba(20, 20, 20, 0.4)), url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&h=1080&fit=crop')`,
         }}
       />
+      
+      {/* 3D Rubik's Cube Background */}
+      <Scene />
       
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-netflix-black via-transparent to-transparent" />
