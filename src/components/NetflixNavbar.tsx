@@ -2,9 +2,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-// Show just the letter "S" like Netflix's "N" logo
+// Show just the letter "S" like Netflix's "N" logo, but without the glowy effect
 const netflixLogo = (
-  <span className="text-netflix-red font-bold text-3xl tracking-wide font-netflix select-none leading-none drop-shadow-[0_2px_8px_rgba(229,9,20,0.75)]">
+  <span className="text-netflix-red font-bold text-3xl tracking-wide font-netflix select-none leading-none">
     S
   </span>
 );
