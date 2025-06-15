@@ -1,18 +1,9 @@
-
 import { Canvas } from "@react-three/fiber";
-import { PerspectiveCamera, useHelper, SpotLight, useDepthBuffer, RoundedBox } from "@react-three/drei";
+import { PerspectiveCamera } from "@react-three/drei";
 import { useThree, useFrame } from "@react-three/fiber";
-import * as THREE from "three";
-import React, {
-  Suspense,
-  useRef,
-  useState,
-  useEffect,
-  forwardRef,
-  useMemo,
-  useCallback,
-  MutableRefObject,
-} from "react";
+import { SpotLight, useDepthBuffer, RoundedBox } from '@react-three/drei';
+import * as THREE from 'three';
+import React, { Suspense, useRef, useState, useEffect, forwardRef, useMemo, useCallback } from "react";
 import { Vector3, Matrix4, Quaternion } from "three";
 
 type DeviceSettings = {
@@ -26,7 +17,7 @@ interface RubiksCubeModelProps {
   scale?: number;
 }
 
-const RubiksCubeModel = forwardRef<THREE.Group, RubiksCubeModelProps>((props, ref) => {
+const RubiksCubeModel = forwardRef((props, ref) => {
   const ANIMATION_DURATION = 1.2;
   const GAP = 0.01;
   const RADIUS = 0.075;
@@ -59,10 +50,10 @@ const RubiksCubeModel = forwardRef<THREE.Group, RubiksCubeModelProps>((props, re
   const reusableMatrix4 = useMemo(() => new Matrix4(), []);
   const reusableQuaternion = useMemo(() => new Quaternion(), []);
 
-  // Expose ref with reset functionality (fix: only expose reset, not spreading the group instance)
+  // FIX: Only expose reset, NOT spreading the group instance
   React.useImperativeHandle(ref, () => ({
     reset: resetCube,
-  }));
+  }), [resetCube]);
 
   const initializeCubes = useCallback(() => {
     const initial = [];
@@ -439,7 +430,7 @@ function CameraController() {
   return null;
 }
 
-function EnhancedSpotlight(props: any) {
+function EnhancedSpotlight(props) {
   const light = useRef<THREE.SpotLight>(null);
   useEffect(() => {
     if (light.current) {
@@ -455,10 +446,9 @@ function EnhancedSpotlight(props: any) {
 }
 
 function SceneContent() {
-  const depthBuffer = useDepthBuffer({
+  const depthBuffer = useDepthBuffer({ 
     size: 2048,
-    frames: 1,
-    disableRenderLoop: true,
+    frames: 1
   });
   const [time, setTime] = useState(0);
   useFrame((state) => {
@@ -467,7 +457,6 @@ function SceneContent() {
   return (
     <>
       <EnhancedSpotlight
-        depthBuffer={depthBuffer}
         color="#aaaace"
         position={[3, 3, 2]}
         volumetric={true}
