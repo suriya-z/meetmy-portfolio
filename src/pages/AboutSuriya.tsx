@@ -22,12 +22,12 @@ const AboutSuriya = () => {
               "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
             WebkitMaskImage:
               "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
-            // Move image right (85%) and further down (80%) for max face visibility
-            objectPosition: "85% 80%",
+            // Move image right (85%) and even further down (100%) for max face visibility
+            objectPosition: "85% 100%",
           }}
           draggable={false}
         />
-        {/* Subtle left gradient for text area, less opaque for more image visibility */}
+        {/* Subtle left gradient for text area */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 via-60% to-transparent z-10"></div>
       </div>
 
