@@ -1,6 +1,7 @@
 
 import React from "react";
-import { Plus } from "lucide-react";
+import { Plus, Play, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 // Sample avatars (replace URLs with your own if needed)
 const PROFILES = [
@@ -19,13 +20,11 @@ const PROFILES = [
 ];
 
 export default function ProfileSelection() {
+  const navigate = useNavigate();
+
   const handleProfileClick = (name: string) => {
     // You can change this logic to route, set profile, etc.
     alert(`Selected: ${name}`);
-  };
-
-  const handleManageProfiles = () => {
-    alert("Manage profiles clicked!");
   };
 
   return (
@@ -61,12 +60,21 @@ export default function ProfileSelection() {
           <span className="mt-4 text-lg sm:text-xl text-netflix-light-gray group-hover:text-white group-focus:text-white tracking-wide">Add Profile</span>
         </button>
       </div>
-      <button
-        className="border-2 border-netflix-light-gray px-6 py-2 rounded text-netflix-light-gray hover:text-white hover:border-white uppercase tracking-widest text-sm"
-        onClick={handleManageProfiles}
-      >
-        Manage Profiles
-      </button>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <button
+          className="netflix-button flex items-center gap-2 text-lg"
+          onClick={() => navigate("/suriya")}
+        >
+          <Play size={20} fill="white" />
+          Get Started
+        </button>
+        <button className="bg-netflix-medium-gray/80 hover:bg-netflix-medium-gray text-white font-medium px-6 py-3 rounded transition-all duration-200 hover:scale-105 flex items-center gap-2"
+        >
+          More Info
+          <ChevronRight size={20} />
+        </button>
+      </div>
     </main>
   );
 }
+
