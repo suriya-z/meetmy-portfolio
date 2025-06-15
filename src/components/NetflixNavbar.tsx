@@ -2,36 +2,51 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+// Stylized "S" logo with two dots, inspired by the user-provided reference image
 const netflixLogo = (
   <span
     className="inline-flex items-center"
-    aria-label="Minimal Stylish S Logo"
+    aria-label="Geometric S Logo"
     style={{
       lineHeight: 1,
       userSelect: "none",
       fontFamily: "inherit"
     }}
   >
-    {/* SVG stylized S, minimal/modern and geometric */}
     <svg
       width="38"
       height="42"
       viewBox="0 0 38 42"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="block drop-shadow-sm"
-      style={{
-        display: "block"
-      }}
+      className="block"
       aria-hidden="true"
     >
+      {/* "S" created using a path; two dots as circles */}
+      {/* Main "S" curve */}
       <path
-        d="M34 6.5C31.5 3.5 25.5 2 19.5 2C13 2 6.5 4 6.5 9.5C6.5 16 22.5 16 22.5 20.5C22.5 24.5 8 24 8 32C8 38 17.5 38.5 25.5 36.5C30.5 35.2 33.5 31.5 29.5 28.5"
+        d="M32 10
+           Q24 3, 15 10
+           Q7 17, 20 23
+           Q33 29, 21 37"
         stroke="#E50914"
-        strokeWidth="4"
+        strokeWidth="3.8"
         strokeLinecap="round"
-        strokeLinejoin="round"
         fill="none"
+      />
+      {/* Top dot */}
+      <circle
+        cx="29.2"
+        cy="7.5"
+        r="2.8"
+        fill="#E50914"
+      />
+      {/* Bottom dot */}
+      <circle
+        cx="8.8"
+        cy="34"
+        r="2.8"
+        fill="#E50914"
       />
     </svg>
   </span>
@@ -50,7 +65,7 @@ const NetflixNavbar: React.FC = () => {
 
   return (
     <nav className="w-full bg-[#111] text-white flex items-center px-6 py-2 fixed top-0 left-0 z-50 h-14 shadow-sm border-b border-black/30">
-      {/* Subtle SVG "S" logo */}
+      {/* Stylized geometric S logo */}
       <div
         className="mr-8 cursor-pointer flex-shrink-0 select-none"
         tabIndex={0}
@@ -95,4 +110,3 @@ const NetflixNavbar: React.FC = () => {
 };
 
 export default NetflixNavbar;
-
