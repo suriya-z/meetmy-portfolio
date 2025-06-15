@@ -77,6 +77,7 @@ export default {
 				'netflix': ['Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
 				'greatvibes': ['"Great Vibes"', 'cursive'],
 				'lobster': ['"Lobster"', 'cursive'],
+				'centrio': ['Centrio', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
