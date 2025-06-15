@@ -10,8 +10,9 @@ const HeroSection = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-contain bg-no-repeat bg-center"
         style={{
+          backgroundColor: "#141414", // Netflix dark fallback
           backgroundImage: `linear-gradient(to right, rgba(20, 20, 20, 0.8), rgba(20, 20, 20, 0.4)), url('/lovable-uploads/2aebf736-262d-4a81-b427-134b026a2db9.png')`,
         }}
       />
@@ -52,3 +53,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
