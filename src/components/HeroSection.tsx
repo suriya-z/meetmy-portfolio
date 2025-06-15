@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { ChevronRight, Play } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -26,11 +29,15 @@ const HeroSection = () => {
             Creative Developer | Designer | Storyteller
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="netflix-button flex items-center gap-2 text-lg">
+            <button
+              className="netflix-button flex items-center gap-2 text-lg"
+              onClick={() => navigate("/suriya")}
+            >
               <Play size={20} fill="white" />
               Get Started
             </button>
-            <button className="bg-netflix-medium-gray/80 hover:bg-netflix-medium-gray text-white font-medium px-6 py-3 rounded transition-all duration-200 hover:scale-105 flex items-center gap-2">
+            <button className="bg-netflix-medium-gray/80 hover:bg-netflix-medium-gray text-white font-medium px-6 py-3 rounded transition-all duration-200 hover:scale-105 flex items-center gap-2"
+            >
               More Info
               <ChevronRight size={20} />
             </button>
