@@ -27,11 +27,11 @@ const AboutSuriya = () => {
             className="h-[140%] w-full object-cover"
             style={{
               objectPosition: "center 88%",
-              // Face is around the lower center, so 88% vertical position
+              // Reduced mask fade to make face brighter
               maskImage:
-                "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
+                "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.26) 60%, rgba(20,20,20,0.40) 85%, rgba(20,20,20,0.86) 97%)",
               WebkitMaskImage:
-                "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
+                "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.26) 60%, rgba(20,20,20,0.40) 85%, rgba(20,20,20,0.86) 97%)",
             }}
             draggable={false}
           />
