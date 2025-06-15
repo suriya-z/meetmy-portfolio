@@ -70,11 +70,13 @@ export default {
 					'dark-gray': '#221F1F',
 					'medium-gray': '#2F2F2F',
 					'light-gray': '#B3B3B3'
-				}
+				},
+				peach: "#F6D6C9", // Soft beige/peach color matching the sample
 			},
 			fontFamily: {
 				'netflix': ['Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
 				'greatvibes': ['"Great Vibes"', 'cursive'],
+				'lobster': ['"Lobster"', 'cursive'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
