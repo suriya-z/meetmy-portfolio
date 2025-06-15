@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowLeft, Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -96,11 +97,13 @@ const AboutSuriya = () => {
           <Play size={20} fill="white" />
           Resume
         </button>
+
+        {/* Move MyProjectsSection here */}
+        <MyProjectsSection />
       </div>
-      {/* My Projects Section below main content */}
-      <MyProjectsSection />
     </div>
   );
 };
 
 export default AboutSuriya;
+
