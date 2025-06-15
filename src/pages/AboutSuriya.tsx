@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 // Use the latest uploaded image for the right-side portrait
@@ -76,7 +76,17 @@ const AboutSuriya = () => {
         <p className="text-lg text-white max-w-2xl font-medium drop-shadow-md mb-8 font-netflix">
           Passionate and detail-oriented Web Developer with hands-on experience in building responsive and user-centric websites using HTML, CSS, JavaScript, and React. Adept at translating design wireframes into high-quality code and ensuring cross-browser compatibility. Eager to contribute to dynamic teams and build impactful web applications.
         </p>
-        {/* Optionally, add CTA or social badges here */}
+        {/* Resume Button styled as Play */}
+        <button
+          className="netflix-button flex items-center gap-2 text-lg w-fit mb-3"
+          onClick={() => {
+            // TODO: Add Resume link action here; replace "#" with actual resume link if available
+            window.open("#", "_blank");
+          }}
+        >
+          <Play size={20} fill="white" />
+          Resume
+        </button>
       </div>
     </div>
   );
