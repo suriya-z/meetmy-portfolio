@@ -2,43 +2,38 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-// Aesthetic, stylized "S" logo, with gradient and shadow to mimic a Netflix-style effect
 const netflixLogo = (
   <span
-    className={`
-      relative
-      text-netflix-red font-extrabold text-4xl sm:text-5xl leading-none select-none
-      rounded-sm
-      px-1
-      transition-transform duration-200
-      font-netflix
-      before:content-[''] before:absolute before:inset-0 before:rounded-sm
-    `}
+    className="inline-flex items-center"
+    aria-label="Minimal Stylish S Logo"
     style={{
-      // Diagonal gradient overlay for depth
-      background: `linear-gradient(135deg, #e50914 35%, #b81d24 65%)`,
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      // subtle 3D look with text shadow
-      textShadow: "1px 2px 6px rgba(20,0,0,0.32), 0 1px 0.5px #b81d24",
+      lineHeight: 1,
+      userSelect: "none",
+      fontFamily: "inherit"
     }}
-    aria-label="Stylish S Logo"
   >
-    S
-    {/* Optional: Overlay a light highlight for extra "Netflix" depth */}
-    <span
-      aria-hidden="true"
-      className="absolute top-0 left-0 w-full h-full pointer-events-none"
+    {/* SVG stylized S, minimal/modern and geometric */}
+    <svg
+      width="38"
+      height="42"
+      viewBox="0 0 38 42"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="block drop-shadow-sm"
       style={{
-        background:
-          "linear-gradient(120deg,rgba(255,255,255,0.18) 22%,rgba(255,255,255,0) 56%)",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-        filter: "blur(0.5px)",
+        display: "block"
       }}
+      aria-hidden="true"
     >
-      S
-    </span>
+      <path
+        d="M34 6.5C31.5 3.5 25.5 2 19.5 2C13 2 6.5 4 6.5 9.5C6.5 16 22.5 16 22.5 20.5C22.5 24.5 8 24 8 32C8 38 17.5 38.5 25.5 36.5C30.5 35.2 33.5 31.5 29.5 28.5"
+        stroke="#E50914"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </svg>
   </span>
 );
 
@@ -55,7 +50,7 @@ const NetflixNavbar: React.FC = () => {
 
   return (
     <nav className="w-full bg-[#111] text-white flex items-center px-6 py-2 fixed top-0 left-0 z-50 h-14 shadow-sm border-b border-black/30">
-      {/* Stylized Logo */}
+      {/* Subtle SVG "S" logo */}
       <div
         className="mr-8 cursor-pointer flex-shrink-0 select-none"
         tabIndex={0}
@@ -100,3 +95,4 @@ const NetflixNavbar: React.FC = () => {
 };
 
 export default NetflixNavbar;
+
