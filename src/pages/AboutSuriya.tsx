@@ -1,7 +1,7 @@
-
 import React from "react";
 import { ArrowLeft, Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import MyProjectsSection from "../components/MyProjectsSection";
 
 // Use the latest uploaded image for the right-side portrait
 const portraitImg = "/lovable-uploads/38524548-8484-4812-b848-2f46ce2a401f.png";
@@ -22,7 +22,7 @@ const AboutSuriya = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-black overflow-hidden flex items-stretch">
+    <div className="relative min-h-screen bg-black overflow-hidden flex items-stretch flex-col">
       {/* Background Right: Portrait with subtle fading left gradient */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         {/* Right-aligned image, wrapped to crop the top half and reveal face */}
@@ -97,6 +97,8 @@ const AboutSuriya = () => {
           Resume
         </button>
       </div>
+      {/* My Projects Section below main content */}
+      <MyProjectsSection />
     </div>
   );
 };
