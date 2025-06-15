@@ -3,7 +3,6 @@ import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-// Use the latest uploaded image for the right-side portrait
 const portraitImg = "/lovable-uploads/38524548-8484-4812-b848-2f46ce2a401f.png";
 
 const AboutSuriya = () => {
@@ -16,10 +15,6 @@ const AboutSuriya = () => {
         {/* Right-aligned image, wrapped to crop the top half and reveal face */}
         <div
           className="absolute top-0 bottom-0 right-0 h-full w-[50vw] max-w-[700px] min-w-[320px] overflow-hidden"
-          style={{
-            // Crop to show more of the bottom of the image (face)
-            // (Height set to 140% to push the face into view and crop the top)
-          }}
         >
           <img
             src={portraitImg}
@@ -27,7 +22,6 @@ const AboutSuriya = () => {
             className="h-[140%] w-full object-cover"
             style={{
               objectPosition: "center 88%",
-              // Face is around the lower center, so 88% vertical position
               maskImage:
                 "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
               WebkitMaskImage:
@@ -36,8 +30,8 @@ const AboutSuriya = () => {
             draggable={false}
           />
         </div>
-        {/* Subtle left gradient for text area */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 via-60% to-transparent z-10"></div>
+        {/* Subtle left gradient for text area - made brighter */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#232323] via-[#232323cc] via-60% to-transparent z-10"></div>
       </div>
 
       {/* Back Button */}
@@ -76,4 +70,3 @@ const AboutSuriya = () => {
 };
 
 export default AboutSuriya;
-
