@@ -17,10 +17,12 @@ interface RubiksCubeModelProps {
   scale?: number;
 }
 
-const RubiksCubeModel = forwardRef((props, ref) => {
+const RubiksCubeModel = forwardRef<THREE.Group, RubiksCubeModelProps>((props, ref) => {
   const ANIMATION_DURATION = 1.2;
   const GAP = 0.01;
   const RADIUS = 0.075;
+
+  const { position, scale, ...restProps } = props;
 
   const mainGroupRef = useRef<THREE.Group>(null);
   const isAnimatingRef = useRef(false);
@@ -50,11 +52,7 @@ const RubiksCubeModel = forwardRef((props, ref) => {
   const reusableMatrix4 = useMemo(() => new Matrix4(), []);
   const reusableQuaternion = useMemo(() => new Quaternion(), []);
 
-  // FIX: Only expose reset, NOT spreading the group instance
-  React.useImperativeHandle(ref, () => ({
-    reset: resetCube,
-  }), [resetCube]);
-
+  // --- FIX 1: Move resetCube here ---
   const initializeCubes = useCallback(() => {
     const initial = [];
     const positions = [-1, 0, 1];
@@ -88,6 +86,13 @@ const RubiksCubeModel = forwardRef((props, ref) => {
       animationFrameRef.current = null;
     }
   }, [initializeCubes]);
+  // --- END FIX 1
+
+  // --- FIX 2: Forward only reset function, not mainGroupRef.current
+  React.useImperativeHandle(ref, () => ({
+    reset: resetCube,
+  }), [resetCube]);
+  // --- END FIX 2
 
   useEffect(() => {
     setCubes(initializeCubes());
@@ -395,7 +400,12 @@ const RubiksCubeModel = forwardRef((props, ref) => {
   }), []);
 
   return (
-    <group ref={mainGroupRef} {...props}>
+    <group
+      ref={mainGroupRef}
+      position={position ?? [0, 0, 0]}
+      scale={scale ?? 1}
+      {...restProps}
+    >
       {cubes.map((cube) => (
         <group
           key={cube.id}
