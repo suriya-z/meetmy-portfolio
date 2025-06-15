@@ -20,6 +20,7 @@ const AboutSuriya = () => {
             className="h-[140%] w-full object-cover"
             style={{
               objectPosition: "center 88%",
+              marginTop: "24px",
               maskImage:
                 "linear-gradient(to left, rgba(0,0,0,0) 5%, rgba(20,20,20,0.5) 42%, rgba(20,20,20,0.85) 72%, rgba(20,20,20,1) 100%)",
               WebkitMaskImage:
@@ -79,4 +80,3 @@ const AboutSuriya = () => {
 };
 
 export default AboutSuriya;
-
