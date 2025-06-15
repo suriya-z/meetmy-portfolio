@@ -1,6 +1,8 @@
+
 import React, { useState } from "react";
 import { Plus, Play, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import PreloaderModal from "./PreloaderModal";
 
 // Update profiles: "Suriya" (with uploaded avatar) and "Kids" (with uploaded image)
 const PROFILES = [
@@ -14,8 +16,15 @@ const PROFILES = [
   }
 ];
 
+// Try to get direct .mp4 link from Google Drive
+// For Drive links, the file can be embedded as:
+// https://drive.google.com/uc?export=download&id=FILE_ID
+// We'll extract the ID from your shared URL:
+const VIDEO_EMBED_URL = "https://drive.google.com/uc?export=download&id=1ORULc8lEH4uy1u-u3NGG2tAYKwLXmwna";
+
 export default function ProfileSelection() {
   const [selectedProfile, setSelectedProfile] = useState<string | null>(null);
+  const [showPreloader, setShowPreloader] = useState(false);
   const navigate = useNavigate();
 
   const handleProfileClick = (name: string) => {
@@ -24,6 +33,17 @@ export default function ProfileSelection() {
       return;
     }
     setSelectedProfile(name);
+  };
+
+  const handleGetStarted = () => {
+    if (selectedProfile === "Suriya") {
+      setShowPreloader(true);
+    }
+  };
+
+  const handlePreloaderFinish = () => {
+    setShowPreloader(false);
+    navigate("/suriya");
   };
 
   return (
@@ -70,7 +90,7 @@ export default function ProfileSelection() {
             ${selectedProfile === "Suriya" ? "animate-pulse shadow-[0_0_16px_4px_rgba(229,9,20,0.7)] border-2 border-netflix-red scale-105" : "bg-netflix-medium-gray/80 text-white opacity-60 cursor-not-allowed"}
           `}
           disabled={selectedProfile !== "Suriya"}
-          onClick={() => selectedProfile === "Suriya" && navigate("/suriya")}
+          onClick={handleGetStarted}
           type="button"
         >
           <Play size={20} fill="white" />
@@ -82,6 +102,9 @@ export default function ProfileSelection() {
           <ChevronRight size={20} />
         </button>
       </div>
+      {showPreloader && (
+        <PreloaderModal videoUrl={VIDEO_EMBED_URL} onFinish={handlePreloaderFinish} />
+      )}
     </main>
   );
 }
