@@ -1,5 +1,6 @@
 
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const projects = [
   {
@@ -33,7 +34,44 @@ const projects = [
 const numberClasses =
   "absolute -left-5 top-2 text-white text-6xl font-extrabold drop-shadow-xl pointer-events-none netflix-text-shadow select-none z-10";
 
+const SCROLL_AMOUNT = 280;
+
 const MyProjectsSection: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  // Check if scrollable content can be scrolled left/right
+  const checkForScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 0);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+  };
+
+  useEffect(() => {
+    checkForScroll();
+    const handleResize = () => checkForScroll();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleScroll = (direction: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const scrollAmount = direction === "left" ? -SCROLL_AMOUNT : SCROLL_AMOUNT;
+    el.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    setTimeout(checkForScroll, 320); // Wait for scroll
+  };
+
+  // Listen to scroll events to update arrow states
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", checkForScroll);
+    return () => el.removeEventListener("scroll", checkForScroll);
+  }, []);
+
   return (
     <section className="relative w-full bg-black py-16 px-0 overflow-x-clip">
       {/* Neon Curve (SVG) */}
@@ -65,8 +103,26 @@ const MyProjectsSection: React.FC = () => {
           My Projects
         </h2>
         <div className="relative">
+          {/* Left arrow button */}
+          <button
+            className={`
+              absolute left-0 top-1/2 -translate-y-1/2 z-30
+              bg-black/60 hover:bg-black/80 text-white
+              p-2 rounded-full shadow-lg transition-opacity duration-200
+              ${canScrollLeft ? "opacity-100" : "opacity-30 cursor-default pointer-events-none"}
+              hidden sm:flex
+            `}
+            aria-label="Scroll left"
+            onClick={() => handleScroll("left")}
+            disabled={!canScrollLeft}
+            tabIndex={canScrollLeft ? 0 : -1}
+            type="button"
+          >
+            <ArrowLeft size={26} />
+          </button>
           {/* Custom horizontal scrolling list */}
           <div
+            ref={scrollRef}
             className="flex gap-8 overflow-x-auto scrollbar-hide pl-8 pr-8 pb-2"
             style={{
               WebkitOverflowScrolling: "touch",
@@ -95,6 +151,23 @@ const MyProjectsSection: React.FC = () => {
               </div>
             ))}
           </div>
+          {/* Right arrow button */}
+          <button
+            className={`
+              absolute right-0 top-1/2 -translate-y-1/2 z-30
+              bg-black/60 hover:bg-black/80 text-white
+              p-2 rounded-full shadow-lg transition-opacity duration-200
+              ${canScrollRight ? "opacity-100" : "opacity-30 cursor-default pointer-events-none"}
+              hidden sm:flex
+            `}
+            aria-label="Scroll right"
+            onClick={() => handleScroll("right")}
+            disabled={!canScrollRight}
+            tabIndex={canScrollRight ? 0 : -1}
+            type="button"
+          >
+            <ArrowRight size={26} />
+          </button>
         </div>
       </div>
     </section>
@@ -102,3 +175,4 @@ const MyProjectsSection: React.FC = () => {
 };
 
 export default MyProjectsSection;
+
