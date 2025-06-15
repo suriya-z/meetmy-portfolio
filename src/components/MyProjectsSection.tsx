@@ -56,9 +56,9 @@ const MyProjectsSection: React.FC = () => {
       </div>
       <div className="max-w-6xl mx-auto">
         <h2
-          className="text-peach text-6xl sm:text-7xl font-centrio font-bold mb-8 text-center select-none drop-shadow-lg tracking-wide"
+          className="text-peach text-5xl sm:text-6xl font-centrio font-bold mb-8 text-center select-none drop-shadow-lg tracking-wide"
           style={{
-            letterSpacing: "0.06em",
+            letterSpacing: "0.02em",
             textShadow: "2px 4px 18px rgba(24,15,7,0.27)"
           }}
         >
