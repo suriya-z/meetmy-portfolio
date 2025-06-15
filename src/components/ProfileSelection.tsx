@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Plus, Play, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -16,11 +15,8 @@ const PROFILES = [
   }
 ];
 
-// Try to get direct .mp4 link from Google Drive
-// For Drive links, the file can be embedded as:
-// https://drive.google.com/uc?export=download&id=FILE_ID
-// We'll extract the ID from your shared URL:
-const VIDEO_EMBED_URL = "https://drive.google.com/uc?export=download&id=1ORULc8lEH4uy1u-u3NGG2tAYKwLXmwna";
+// Use the direct MP4 link you provided for the intro video.
+const VIDEO_EMBED_URL = "https://ia600202.us.archive.org/10/items/netflix-intro-1080p-download/Netflix%20Intro%20%281080p%29%20%28Download%29.mp4";
 
 export default function ProfileSelection() {
   const [selectedProfile, setSelectedProfile] = useState<string | null>(null);
