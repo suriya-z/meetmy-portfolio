@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const projects = [
@@ -55,7 +54,7 @@ const MyProjectsSection: React.FC = () => {
         </svg>
       </div>
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-white text-3xl sm:text-4xl font-bold mb-8 pl-4">
+        <h2 className="text-white text-3xl sm:text-4xl font-bold mb-8 text-center">
           My Projects
         </h2>
         <div className="relative">
