@@ -2,10 +2,43 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-// Show just the letter "S" like Netflix's "N" logo, but without the glowy effect
+// Aesthetic, stylized "S" logo, with gradient and shadow to mimic a Netflix-style effect
 const netflixLogo = (
-  <span className="text-netflix-red font-bold text-3xl tracking-wide font-netflix select-none leading-none">
+  <span
+    className={`
+      relative
+      text-netflix-red font-extrabold text-4xl sm:text-5xl leading-none select-none
+      rounded-sm
+      px-1
+      transition-transform duration-200
+      font-netflix
+      before:content-[''] before:absolute before:inset-0 before:rounded-sm
+    `}
+    style={{
+      // Diagonal gradient overlay for depth
+      background: `linear-gradient(135deg, #e50914 35%, #b81d24 65%)`,
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      // subtle 3D look with text shadow
+      textShadow: "1px 2px 6px rgba(20,0,0,0.32), 0 1px 0.5px #b81d24",
+    }}
+    aria-label="Stylish S Logo"
+  >
     S
+    {/* Optional: Overlay a light highlight for extra "Netflix" depth */}
+    <span
+      aria-hidden="true"
+      className="absolute top-0 left-0 w-full h-full pointer-events-none"
+      style={{
+        background:
+          "linear-gradient(120deg,rgba(255,255,255,0.18) 22%,rgba(255,255,255,0) 56%)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        filter: "blur(0.5px)",
+      }}
+    >
+      S
+    </span>
   </span>
 );
 
@@ -22,12 +55,15 @@ const NetflixNavbar: React.FC = () => {
 
   return (
     <nav className="w-full bg-[#111] text-white flex items-center px-6 py-2 fixed top-0 left-0 z-50 h-14 shadow-sm border-b border-black/30">
-      {/* Logo - S styled like the Netflix N */}
+      {/* Stylized Logo */}
       <div
-        className="mr-8 cursor-pointer flex-shrink-0"
+        className="mr-8 cursor-pointer flex-shrink-0 select-none"
         tabIndex={0}
         onClick={() => navigate("/")}
         aria-label="Go to Home"
+        style={{
+          lineHeight: 0.9,
+        }}
       >
         {netflixLogo}
       </div>
@@ -64,4 +100,3 @@ const NetflixNavbar: React.FC = () => {
 };
 
 export default NetflixNavbar;
-
