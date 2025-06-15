@@ -16,6 +16,16 @@ interface RubiksCubeRef {
   reset: () => void;
 }
 
+const chromeMaterialProps = {
+  color: '#000000',
+  metalness: 0.5,
+  roughness: 0.5,
+  clearcoat: 0,
+  clearcoatRoughness: 0,
+  reflectivity: 0.5,
+  envMapIntensity: 8,
+};
+
 const RubiksCubeModel = forwardRef<RubiksCubeRef, RubiksCubeModelProps>((props, ref) => {
   const ANIMATION_DURATION = 1.2;
   const GAP = 0.01;
@@ -438,23 +448,6 @@ const RubiksCubeModel = forwardRef<RubiksCubeRef, RubiksCubeModelProps>((props, 
     }
   });
 
-  const chromeMaterial = useMemo(() => ({
-    color: '#000000',
-    metalness: 0.5,
-    roughness: 0.5,
-    clearcoat: 0,
-    clearcoatRoughness: 0,
-    reflectivity: 0.5,
-    iridescence: 0,
-    iridescenceIOR: 0,
-    iridescenceThicknessRange: [100, 400] as [number, number],
-    envMapIntensity: 8
-  }), []);
-
-  const sharedMaterial = useMemo(() => (
-    <meshPhysicalMaterial {...chromeMaterial} />
-  ), [chromeMaterial]);
-
   return (
     <group ref={mainGroupRef} {...props}>
       {cubes.map((cube) => (
@@ -474,7 +467,8 @@ const RubiksCubeModel = forwardRef<RubiksCubeRef, RubiksCubeModelProps>((props, 
             castShadow={deviceSettings.castShadow}
             receiveShadow={deviceSettings.receiveShadow}
           >
-            {sharedMaterial}
+            {/* Provide the material props directly */}
+            <meshPhysicalMaterial {...chromeMaterialProps} />
           </RoundedBox>
         </group>
       ))}
