@@ -1,15 +1,15 @@
-import React from 'react';
-import Navbar from '@/components/Navbar';
-import HeroSection from '@/components/HeroSection';
-import ProjectsSection from '@/components/ProjectsSection';
-import Footer from '@/components/Footer';
 
+import React from 'react';
+import ProfileSelection from '@/components/ProfileSelection';
+
+// Home page shows "Who's watching?" selector
 const Index = () => {
   return (
     <div className="min-h-screen bg-netflix-black">
-      <HeroSection />
+      <ProfileSelection />
     </div>
   );
 };
 
 export default Index;
+
