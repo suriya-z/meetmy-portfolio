@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -27,11 +26,11 @@ const AboutSuriya = () => {
             className="h-[140%] w-full object-cover"
             style={{
               objectPosition: "center 88%",
-              // Reduced mask fade to make face brighter
+              // Make the mask effect almost transparent for a bright, visible face
               maskImage:
-                "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.26) 60%, rgba(20,20,20,0.40) 85%, rgba(20,20,20,0.86) 97%)",
+                "linear-gradient(to left, rgba(0,0,0,0) 15%, rgba(20,20,20,0.06) 65%, rgba(20,20,20,0.08) 90%, rgba(20,20,20,0.18) 98%)",
               WebkitMaskImage:
-                "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.26) 60%, rgba(20,20,20,0.40) 85%, rgba(20,20,20,0.86) 97%)",
+                "linear-gradient(to left, rgba(0,0,0,0) 15%, rgba(20,20,20,0.06) 65%, rgba(20,20,20,0.08) 90%, rgba(20,20,20,0.18) 98%)",
             }}
             draggable={false}
           />
@@ -76,4 +75,3 @@ const AboutSuriya = () => {
 };
 
 export default AboutSuriya;
-
