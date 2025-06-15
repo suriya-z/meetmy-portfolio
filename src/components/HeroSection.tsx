@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ChevronRight, Play } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
@@ -33,7 +32,7 @@ const HeroSection = () => {
             Suriya
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl text-netflix-light-gray mb-8 netflix-text-shadow">
-            Creative Developer | Designer | Storyteller
+            Web Developer | Web Designer
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
