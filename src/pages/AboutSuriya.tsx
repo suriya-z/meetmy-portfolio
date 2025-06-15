@@ -10,7 +10,7 @@ const AboutSuriya = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+    <div className="relative min-h-screen flex items-start bg-black overflow-hidden">
       {/* Back Button */}
       <button
         onClick={() => navigate("/")}
@@ -28,7 +28,7 @@ const AboutSuriya = () => {
         }}
       />
       {/* Content */}
-      <div className="relative z-10 w-full max-w-3xl px-6 py-16 flex flex-col gap-8 items-start text-left sm:px-10 md:px-12 lg:pl-0 lg:pr-32">
+      <div className="relative z-10 flex flex-col gap-8 items-start text-left pl-6 sm:pl-10 md:pl-16 lg:pl-24 py-16 w-full max-w-3xl">
         <span className="uppercase tracking-widest text-xs text-red-600 font-bold mb-2 font-netflix">
           N SERIES
         </span>
