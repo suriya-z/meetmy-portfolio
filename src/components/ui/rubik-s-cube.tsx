@@ -17,7 +17,7 @@ interface RubiksCubeModelProps {
   scale?: number;
 }
 
-const RubiksCubeModel = forwardRef<THREE.Group, RubiksCubeModelProps>((props, ref) => {
+const RubiksCubeModel = (props: RubiksCubeModelProps) => {
   const ANIMATION_DURATION = 1.2;
   const GAP = 0.01;
   const RADIUS = 0.075;
@@ -52,7 +52,6 @@ const RubiksCubeModel = forwardRef<THREE.Group, RubiksCubeModelProps>((props, re
   const reusableMatrix4 = useMemo(() => new Matrix4(), []);
   const reusableQuaternion = useMemo(() => new Quaternion(), []);
 
-  // --- FIX 1: Move resetCube here ---
   const initializeCubes = useCallback(() => {
     const initial = [];
     const positions = [-1, 0, 1];
@@ -86,13 +85,6 @@ const RubiksCubeModel = forwardRef<THREE.Group, RubiksCubeModelProps>((props, re
       animationFrameRef.current = null;
     }
   }, [initializeCubes]);
-  // --- END FIX 1
-
-  // --- FIX 2: Forward only reset function, not mainGroupRef.current
-  React.useImperativeHandle(ref, () => ({
-    reset: resetCube,
-  }), [resetCube]);
-  // --- END FIX 2
 
   useEffect(() => {
     setCubes(initializeCubes());
@@ -423,13 +415,22 @@ const RubiksCubeModel = forwardRef<THREE.Group, RubiksCubeModelProps>((props, re
             castShadow={deviceSettings.castShadow}
             receiveShadow={deviceSettings.receiveShadow}
           >
-            <meshPhysicalMaterial {...chromeMaterialProps} />
+            <meshPhysicalMaterial
+              color="#000000"
+              metalness={0.5}
+              roughness={0.5}
+              clearcoat={0}
+              clearcoatRoughness={0}
+              reflectivity={0.5}
+              envMapIntensity={8}
+            />
           </RoundedBox>
         </group>
       ))}
     </group>
   );
-});
+};
+
 RubiksCubeModel.displayName = "RubiksCubeModel";
 
 function CameraController() {
