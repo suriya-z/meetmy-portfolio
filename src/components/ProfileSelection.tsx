@@ -3,7 +3,7 @@ import React from "react";
 import { Plus, Play, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-// Update profiles: "Steven" becomes "Suriya" and uses uploaded image
+// Update profiles: "Suriya" (with uploaded avatar) and "Kids" (with uploaded image)
 const PROFILES = [
   {
     name: "Suriya",
@@ -11,7 +11,7 @@ const PROFILES = [
   },
   {
     name: "Kids",
-    avatar: "https://occ-0-3219-3647.1.nflxso.net/dnm/api/v6/8zA3vK6CtLv5Qf2K4hE6ITJ3SWE/AAAABU9bTPasUU4IbSKuJ9FVUYni1dgPLbc1Q90VsAPsM3-7KLjTZG61wh3Wi0GmHrRRkwfoJjPuZI62zBbGK6c5PBn92NXY.png?r=2a6"
+    avatar: "/lovable-uploads/c4402640-2a5d-4b04-80e0-55f3ecce35cc.png"
   }
 ];
 
