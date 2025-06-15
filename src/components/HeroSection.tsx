@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ChevronRight, Play } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
@@ -11,7 +12,7 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(20, 20, 20, 0.8), rgba(20, 20, 20, 0.4)), url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&h=1080&fit=crop')`,
+          backgroundImage: `linear-gradient(to right, rgba(20, 20, 20, 0.8), rgba(20, 20, 20, 0.4)), url('/lovable-uploads/2aebf736-262d-4a81-b427-134b026a2db9.png')`,
         }}
       />
 
