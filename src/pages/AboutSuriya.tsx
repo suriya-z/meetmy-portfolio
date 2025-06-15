@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowLeft, Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -35,8 +34,8 @@ const AboutSuriya = () => {
             alt="Portrait"
             className="h-full w-full object-cover"
             style={{
-              // Move the face to the very top for better visibility
-              objectPosition: "center 10%",
+              // Tune objectPosition to vertically align face with the curve section
+              objectPosition: "center 15%",
               maskImage:
                 "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
               WebkitMaskImage:
@@ -58,19 +57,16 @@ const AboutSuriya = () => {
         <span className="sr-only">Back</span>
       </button>
 
-      {/* Content Section */}
+      {/* Content Section (main info & resume button) */}
       <div
         className="
           relative z-20 flex flex-col justify-center
           pl-6 sm:pl-10 md:pl-16 lg:pl-24
           pr-4
-          py-20
+          pt-20 pb-4
           w-full
           max-w-[50vw]
         "
-        style={{
-          // The section stays strictly at or before the center, max 50vw.
-        }}
       >
         <span className="uppercase tracking-widest text-xs text-red-600 font-bold mb-2 font-netflix">
           N SERIES
@@ -91,14 +87,15 @@ const AboutSuriya = () => {
         </p>
         {/* Resume Button styled as Play */}
         <button
-          className="netflix-button flex items-center gap-2 text-lg w-fit mb-3"
+          className="netflix-button flex items-center gap-2 text-lg w-fit mb-0"
           onClick={handleResumeDownload}
         >
           <Play size={20} fill="white" />
           Resume
         </button>
-
-        {/* Move MyProjectsSection here */}
+      </div>
+      {/* Move MyProjectsSection (including neon curve) so it's "pulled up" to touch the content above & portrait */}
+      <div className="relative z-30 -mt-12">
         <MyProjectsSection />
       </div>
     </div>
@@ -106,4 +103,3 @@ const AboutSuriya = () => {
 };
 
 export default AboutSuriya;
-
