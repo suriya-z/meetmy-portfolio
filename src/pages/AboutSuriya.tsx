@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -13,18 +12,18 @@ const AboutSuriya = () => {
     <div className="relative min-h-screen bg-black overflow-hidden flex items-stretch">
       {/* Background Right: Portrait with subtle fading left gradient */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
-        {/* Right-aligned image, shifted further right, and further down for face visibility */}
+        {/* Right-aligned image, shifted further right and further down for face visibility */}
         <img
           src={portraitImg}
           alt="Portrait"
           className="absolute top-0 bottom-0 right-0 h-full w-[50vw] max-w-[700px] min-w-[320px] object-cover"
           style={{
-            // Lighter gradient so more image/face is visible
             maskImage:
               "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
             WebkitMaskImage:
               "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
-            objectPosition: "85% 68%" // Move image right (85%) and down (68%)
+            // Move image right (85%) and further down (80%) for max face visibility
+            objectPosition: "85% 80%",
           }}
           draggable={false}
         />
@@ -68,4 +67,3 @@ const AboutSuriya = () => {
 };
 
 export default AboutSuriya;
-
