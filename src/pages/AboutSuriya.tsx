@@ -13,24 +13,23 @@ const AboutSuriya = () => {
     <div className="relative min-h-screen bg-black overflow-hidden flex items-stretch">
       {/* Background Right: Portrait with subtle fading left gradient */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
-        {/* Right-aligned image, shifted further right with lighter fade */}
+        {/* Right-aligned image, shifted further right, and further down for face visibility */}
         <img
           src={portraitImg}
           alt="Portrait"
-          className="absolute top-0 bottom-0 right-0 h-full w-[50vw] max-w-[700px] min-w-[320px] object-cover object-right md:object-[80%_center] lg:object-[70%_center]"
+          className="absolute top-0 bottom-0 right-0 h-full w-[50vw] max-w-[700px] min-w-[320px] object-cover"
           style={{
             // Lighter gradient so more image/face is visible
             maskImage:
-              "linear-gradient(to left, rgba(0,0,0,0) 5%, rgba(20,20,20,0.68) 55%, rgba(20,20,20,0.85) 80%, rgba(20,20,20,1) 95%)",
+              "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
             WebkitMaskImage:
-              "linear-gradient(to left, rgba(0,0,0,0) 5%, rgba(20,20,20,0.68) 55%, rgba(20,20,20,0.85) 80%, rgba(20,20,20,1) 95%)",
-            // Try to ensure the face is visible; can be adjusted for exact image
-            objectPosition: "85% center"
+              "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
+            objectPosition: "85% 68%" // Move image right (85%) and down (68%)
           }}
           draggable={false}
         />
         {/* Subtle left gradient for text area, less opaque for more image visibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 via-60% to-transparent z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 via-60% to-transparent z-10"></div>
       </div>
 
       {/* Back Button */}
@@ -69,3 +68,4 @@ const AboutSuriya = () => {
 };
 
 export default AboutSuriya;
+
