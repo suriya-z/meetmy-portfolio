@@ -5,9 +5,21 @@ import { useNavigate } from "react-router-dom";
 
 // Use the latest uploaded image for the right-side portrait
 const portraitImg = "/lovable-uploads/38524548-8484-4812-b848-2f46ce2a401f.png";
+// Resume image file for download
+const resumeImg = "/lovable-uploads/7273a0b5-175d-4187-8cfe-725279cf5227.png";
 
 const AboutSuriya = () => {
   const navigate = useNavigate();
+
+  // Trigger download for resume image
+  const handleResumeDownload = () => {
+    const link = document.createElement("a");
+    link.href = resumeImg;
+    link.download = "SuriyaD_Resume.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="relative min-h-screen bg-black overflow-hidden flex items-stretch">
@@ -79,10 +91,7 @@ const AboutSuriya = () => {
         {/* Resume Button styled as Play */}
         <button
           className="netflix-button flex items-center gap-2 text-lg w-fit mb-3"
-          onClick={() => {
-            // TODO: Add Resume link action here; replace "#" with actual resume link if available
-            window.open("#", "_blank");
-          }}
+          onClick={handleResumeDownload}
         >
           <Play size={20} fill="white" />
           Resume
@@ -93,4 +102,3 @@ const AboutSuriya = () => {
 };
 
 export default AboutSuriya;
-
