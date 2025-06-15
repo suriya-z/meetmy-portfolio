@@ -3,11 +3,11 @@ import React from "react";
 import { Plus, Play, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-// Sample avatars (replace URLs with your own if needed)
+// Update profiles: "Steven" becomes "Suriya" and uses uploaded image
 const PROFILES = [
   {
-    name: "Steven",
-    avatar: "https://occ-0-3219-3647.1.nflxso.net/dnm/api/v6/8zA3vK6CtLv5Qf2K4hE6ITJ3SWE/AAAABcZ2Hmqy_6vds5goPRvNEUSey6JzRBGBHkp4AIHBgCPhaZzm-JlAYHPyqEoE9uevgss1WEDODuZVU6pMxHyZGLhvVLlj.png?r=ffa"
+    name: "Suriya",
+    avatar: "/lovable-uploads/5cd95a7f-42bc-4f73-9fd6-87b7a56be546.png",
   },
   {
     name: "Kids",
@@ -73,4 +73,3 @@ export default function ProfileSelection() {
     </main>
   );
 }
-
