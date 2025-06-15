@@ -28,7 +28,7 @@ const AboutSuriya = () => {
         }}
       />
       {/* Content */}
-      <div className="relative z-10 max-w-3xl ml-12 pl-6 py-16 flex flex-col gap-8">
+      <div className="relative z-10 w-full max-w-3xl px-6 py-16 flex flex-col gap-8 items-start text-left sm:px-10 md:px-12 lg:pl-0 lg:pr-32">
         <span className="uppercase tracking-widest text-xs text-red-600 font-bold mb-2 font-netflix">
           N SERIES
         </span>
