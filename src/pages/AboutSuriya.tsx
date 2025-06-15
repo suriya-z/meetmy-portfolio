@@ -3,7 +3,7 @@ import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-// Portrait image for the right side
+// Use the latest uploaded image for the right-side portrait
 const portraitImg = "/lovable-uploads/38524548-8484-4812-b848-2f46ce2a401f.png";
 
 const AboutSuriya = () => {
@@ -11,23 +11,26 @@ const AboutSuriya = () => {
 
   return (
     <div className="relative min-h-screen bg-black overflow-hidden flex items-stretch">
-      {/* Background Right: Portrait with fading left gradient */}
+      {/* Background Right: Portrait with subtle fading left gradient */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
-        {/* Right-aligned image */}
+        {/* Right-aligned image, shifted further right with lighter fade */}
         <img
           src={portraitImg}
           alt="Portrait"
-          className="absolute top-0 bottom-0 right-0 h-full w-2/3 object-cover object-right"
+          className="absolute top-0 bottom-0 right-0 h-full w-[50vw] max-w-[700px] min-w-[320px] object-cover object-right md:object-[80%_center] lg:object-[70%_center]"
           style={{
+            // Lighter gradient so more image/face is visible
             maskImage:
-              "linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(20,20,20,0.95) 60%, rgba(20,20,20,1) 75%)",
+              "linear-gradient(to left, rgba(0,0,0,0) 5%, rgba(20,20,20,0.68) 55%, rgba(20,20,20,0.85) 80%, rgba(20,20,20,1) 95%)",
             WebkitMaskImage:
-              "linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(20,20,20,0.95) 60%, rgba(20,20,20,1) 75%)",
+              "linear-gradient(to left, rgba(0,0,0,0) 5%, rgba(20,20,20,0.68) 55%, rgba(20,20,20,0.85) 80%, rgba(20,20,20,1) 95%)",
+            // Try to ensure the face is visible; can be adjusted for exact image
+            objectPosition: "85% center"
           }}
           draggable={false}
         />
-        {/* Solid dark left for extra depth */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 via-70% to-transparent z-10"></div>
+        {/* Subtle left gradient for text area, less opaque for more image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 via-60% to-transparent z-10"></div>
       </div>
 
       {/* Back Button */}
@@ -66,4 +69,3 @@ const AboutSuriya = () => {
 };
 
 export default AboutSuriya;
-
