@@ -10,10 +10,6 @@ const PROFILES = [
     avatar: "https://occ-0-3219-3647.1.nflxso.net/dnm/api/v6/8zA3vK6CtLv5Qf2K4hE6ITJ3SWE/AAAABcZ2Hmqy_6vds5goPRvNEUSey6JzRBGBHkp4AIHBgCPhaZzm-JlAYHPyqEoE9uevgss1WEDODuZVU6pMxHyZGLhvVLlj.png?r=ffa"
   },
   {
-    name: "Will",
-    avatar: "https://occ-0-3219-3647.1.nflxso.net/dnm/api/v6/8zA3vK6CtLv5Qf2K4hE6ITJ3SWE/AAAABQ0h7XnBCusac_2GChMnATcPtM2YEFX6oxj9JMnV6HfPklxnldFV2V-lSzVQQ9PE57lygi7w4itbk5WVRR_3XOUMz_93.png?r=229"
-  },
-  {
     name: "Kids",
     avatar: "https://occ-0-3219-3647.1.nflxso.net/dnm/api/v6/8zA3vK6CtLv5Qf2K4hE6ITJ3SWE/AAAABU9bTPasUU4IbSKuJ9FVUYni1dgPLbc1Q90VsAPsM3-7KLjTZG61wh3Wi0GmHrRRkwfoJjPuZI62zBbGK6c5PBn92NXY.png?r=2a6"
   }
