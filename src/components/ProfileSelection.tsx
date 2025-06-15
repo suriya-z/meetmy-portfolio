@@ -20,7 +20,7 @@ export default function ProfileSelection() {
 
   const handleProfileClick = (name: string) => {
     if (name === "Kids") {
-      alert("I need you cant enter inside if you're under 18. sorry!");
+      alert("you cant enter inside if you're under 18. sorry!");
       return;
     }
     setSelectedProfile(name);
