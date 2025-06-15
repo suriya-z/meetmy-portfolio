@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowLeft, Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -71,14 +72,14 @@ const AboutSuriya = () => {
         <span className="uppercase tracking-widest text-xs text-red-600 font-bold mb-2 font-netflix">
           N SERIES
         </span>
-        <h1 className="text-white text-5xl sm:text-7xl font-extrabold leading-tight drop-shadow-[2px_2px_4px_rgba(0,0,0,.8)] netflix-text-shadow font-netflix">
+        <h1 className="text-white text-5xl sm:text-7xl font-bold leading-tight drop-shadow-[2px_2px_4px_rgba(0,0,0,.8)] netflix-text-shadow font-netflix">
           Suriya
         </h1>
         <div className="flex items-center gap-4 my-4">
-          <span className="text-xs font-semibold bg-white/20 text-white px-2.5 py-1 rounded font-netflix">
+          <span className="text-xs font-bold bg-white/20 text-white px-2.5 py-1 rounded font-netflix">
             Web Developer
           </span>
-          <span className="text-xs font-semibold bg-white/16 text-gray-200 px-2 py-1 rounded border border-white/20 font-netflix">
+          <span className="text-xs font-bold bg-white/16 text-gray-200 px-2 py-1 rounded border border-white/20 font-netflix">
             Web Designer
           </span>
         </div>
