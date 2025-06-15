@@ -3,7 +3,6 @@ import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-// Use the latest uploaded image for the right-side portrait
 const portraitImg = "/lovable-uploads/38524548-8484-4812-b848-2f46ce2a401f.png";
 
 const AboutSuriya = () => {
@@ -11,12 +10,10 @@ const AboutSuriya = () => {
 
   return (
     <div className="relative min-h-screen bg-black overflow-hidden flex items-stretch">
-      {/* Background Right: Portrait with subtle fading left gradient */}
+      {/* Background Right: Portrait softly fading to left */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
-        {/* Right-aligned image, wrapped to crop the top half and reveal face */}
-        <div
-          className="absolute top-0 bottom-0 right-0 h-full w-[50vw] max-w-[700px] min-w-[320px] overflow-hidden"
-        >
+        {/* Right-aligned image with extremely wide, soft leftward gradient mask */}
+        <div className="absolute top-0 bottom-0 right-0 h-full w-[55vw] max-w-[760px] min-w-[320px] overflow-hidden">
           <img
             src={portraitImg}
             alt="Portrait"
@@ -24,15 +21,14 @@ const AboutSuriya = () => {
             style={{
               objectPosition: "center 88%",
               maskImage:
-                "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
+                "linear-gradient(to left, rgba(0,0,0,0) 5%, rgba(20,20,20,0.5) 42%, rgba(20,20,20,0.85) 72%, rgba(20,20,20,1) 100%)",
               WebkitMaskImage:
-                "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
+                "linear-gradient(to left, rgba(0,0,0,0) 5%, rgba(20,20,20,0.5) 42%, rgba(20,20,20,0.85) 72%, rgba(20,20,20,1) 100%)",
             }}
             draggable={false}
           />
         </div>
-        {/* Subtle left gradient for text area */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 via-60% to-transparent z-10"></div>
+        {/* Eliminate previous extra left gradient: just fall back to solid bg */}
       </div>
 
       {/* Back Button */}
