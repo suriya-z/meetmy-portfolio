@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Plus, Play, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -16,11 +16,11 @@ const PROFILES = [
 ];
 
 export default function ProfileSelection() {
+  const [selectedProfile, setSelectedProfile] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const handleProfileClick = (name: string) => {
-    // You can change this logic to route, set profile, etc.
-    alert(`Selected: ${name}`);
+    setSelectedProfile(name);
   };
 
   return (
@@ -30,10 +30,11 @@ export default function ProfileSelection() {
         {PROFILES.map(profile => (
           <button
             key={profile.name}
-            className="flex flex-col items-center group outline-none"
+            className={`flex flex-col items-center group outline-none ${selectedProfile === profile.name ? "ring-2 ring-netflix-red ring-offset-2" : ""}`}
             tabIndex={0}
             aria-label={profile.name}
             onClick={() => handleProfileClick(profile.name)}
+            type="button"
           >
             <img
               src={profile.avatar}
@@ -41,7 +42,9 @@ export default function ProfileSelection() {
               className="w-24 h-24 sm:w-32 sm:h-32 rounded-md border-2 border-transparent group-hover:border-white group-focus:border-white object-cover shadow-xl"
               draggable={false}
             />
-            <span className="mt-4 text-lg sm:text-xl text-netflix-light-gray group-hover:text-white group-focus:text-white tracking-wide">{profile.name}</span>
+            <span className={`mt-4 text-lg sm:text-xl text-netflix-light-gray group-hover:text-white group-focus:text-white tracking-wide ${selectedProfile === profile.name ? "text-white" : ""}`}>
+              {profile.name}
+            </span>
           </button>
         ))}
         <button
@@ -49,6 +52,7 @@ export default function ProfileSelection() {
           tabIndex={0}
           aria-label="Add Profile"
           onClick={() => handleProfileClick("Add Profile")}
+          type="button"
         >
           <span className="bg-netflix-medium-gray/50 rounded-md w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center border-2 border-transparent group-hover:border-white group-focus:border-white transition-colors">
             <Plus size={48} color="#b3b3b3" />
@@ -58,8 +62,13 @@ export default function ProfileSelection() {
       </div>
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <button
-          className="netflix-button flex items-center gap-2 text-lg"
-          onClick={() => navigate("/suriya")}
+          className={`
+            netflix-button flex items-center gap-2 text-lg transition-all
+            ${selectedProfile === "Suriya" ? "animate-pulse shadow-[0_0_16px_4px_rgba(229,9,20,0.7)] border-2 border-netflix-red scale-105" : "bg-netflix-medium-gray/80 text-white opacity-60 cursor-not-allowed"}
+          `}
+          disabled={selectedProfile !== "Suriya"}
+          onClick={() => selectedProfile === "Suriya" && navigate("/suriya")}
+          type="button"
         >
           <Play size={20} fill="white" />
           Get Started
@@ -73,3 +82,4 @@ export default function ProfileSelection() {
     </main>
   );
 }
+
