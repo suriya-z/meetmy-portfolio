@@ -10,11 +10,9 @@ const netflixLogo = (
 );
 
 const NAV_ITEMS = [
-  { label: "Home", href: "/" },
-  { label: "Movies", href: "#movies" },
-  { label: "TV Shows", href: "#tvshows" },
-  { label: "Latest", href: "#latest" },
-  { label: "My List", href: "#my-list" },
+  { label: "About me", href: "/suriya" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const AVATAR_SRC = "/lovable-uploads/5cd95a7f-42bc-4f73-9fd6-87b7a56be546.png";
