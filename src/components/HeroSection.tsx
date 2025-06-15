@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ChevronRight, Play } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
@@ -36,14 +35,6 @@ const HeroSection = () => {
               <Play size={20} fill="white" />
               Get Started
             </button>
-            <button
-              className="netflix-button flex items-center gap-2 text-lg"
-              // Set your resume action here
-              onClick={() => { /* Add your Resume action if needed */ }}
-            >
-              <Play size={20} fill="white" />
-              Resume
-            </button>
             <button className="bg-netflix-medium-gray/80 hover:bg-netflix-medium-gray text-white font-medium px-6 py-3 rounded transition-all duration-200 hover:scale-105 flex items-center gap-2"
             >
               More Info
@@ -60,4 +51,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
