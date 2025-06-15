@@ -1,8 +1,8 @@
-
 import React from "react";
 import { ArrowLeft, Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import MyProjectsSection from "../components/MyProjectsSection";
+import NetflixNavbar from "../components/NetflixNavbar";
 
 // Use the latest uploaded image for the right-side portrait
 const portraitImg = "/lovable-uploads/38524548-8484-4812-b848-2f46ce2a401f.png";
@@ -24,6 +24,19 @@ const AboutSuriya = () => {
 
   return (
     <div className="relative min-h-screen bg-black overflow-hidden flex items-stretch flex-col">
+      {/* NEW: Netflix Navbar at top */}
+      <NetflixNavbar />
+      
+      {/* Back Button (keep for now but it's below navbar) */}
+      <button
+        onClick={() => navigate("/")}
+        className="fixed top-20 left-6 z-30 flex items-center gap-2 bg-black/60 hover:bg-black/80 transition-colors px-4 py-2 rounded-full shadow-lg border border-white/20 backdrop-blur font-netflix text-white"
+        aria-label="Back to Home"
+      >
+        <ArrowLeft size={24} strokeWidth={2.2} />
+        <span className="sr-only">Back</span>
+      </button>
+
       {/* Background Right: Portrait with subtle fading left gradient */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         {/* Right-aligned image, wrapped to crop the top half and reveal face */}
@@ -35,7 +48,6 @@ const AboutSuriya = () => {
             alt="Portrait"
             className="h-full w-full object-cover"
             style={{
-              // Tune objectPosition to vertically align face with the curve section
               objectPosition: "center 15%",
               maskImage:
                 "linear-gradient(to left, rgba(0,0,0,0) 8%, rgba(20,20,20,0.5) 60%, rgba(20,20,20,0.78) 85%, rgba(20,20,20,1) 97%)",
@@ -48,23 +60,13 @@ const AboutSuriya = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 via-60% to-transparent z-10"></div>
       </div>
 
-      {/* Back Button */}
-      <button
-        onClick={() => navigate("/")}
-        className="fixed top-6 left-6 z-30 flex items-center gap-2 bg-black/60 hover:bg-black/80 transition-colors px-4 py-2 rounded-full shadow-lg border border-white/20 backdrop-blur font-netflix text-white"
-        aria-label="Back to Home"
-      >
-        <ArrowLeft size={24} strokeWidth={2.2} />
-        <span className="sr-only">Back</span>
-      </button>
-
       {/* Content Section (main info & resume button) */}
       <div
         className="
           relative z-20 flex flex-col justify-center
           pl-6 sm:pl-10 md:pl-16 lg:pl-24
           pr-4
-          pt-20 pb-4
+          pt-28 pb-4
           w-full
           max-w-[50vw]
         "
