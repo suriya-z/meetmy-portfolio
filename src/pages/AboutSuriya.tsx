@@ -71,9 +71,6 @@ const AboutSuriya = () => {
           max-w-[50vw]
         "
       >
-        <span className="uppercase tracking-widest text-xs text-red-600 font-bold mb-2 font-netflix">
-          N SERIES
-        </span>
         <h1 className="text-white text-5xl sm:text-7xl font-bold leading-tight drop-shadow-[2px_2px_4px_rgba(0,0,0,.8)] netflix-text-shadow font-netflix">
           Suriya
         </h1>
