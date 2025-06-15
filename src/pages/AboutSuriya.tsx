@@ -16,15 +16,15 @@ const AboutSuriya = () => {
       />
       {/* Content */}
       <div className="relative z-10 max-w-3xl ml-12 pl-6 py-16 flex flex-col gap-8">
-        <span className="uppercase tracking-widest text-xs text-red-600 font-bold mb-2">N SERIES</span>
-        <h1 className="text-white text-5xl sm:text-7xl font-extrabold leading-tight drop-shadow-[2px_2px_4px_rgba(0,0,0,.8)] netflix-text-shadow">
+        <span className="uppercase tracking-widest text-xs text-red-600 font-bold mb-2 font-netflix">N SERIES</span>
+        <h1 className="text-white text-5xl sm:text-7xl font-extrabold leading-tight drop-shadow-[2px_2px_4px_rgba(0,0,0,.8)] netflix-text-shadow font-netflix">
           Suriya
         </h1>
         <div className="flex items-center gap-4 my-2">
-          <span className="text-xs font-semibold bg-white/20 text-white px-2.5 py-1 rounded">#1 in Web Developers Today</span>
-          <span className="text-xs font-semibold bg-white/16 text-gray-200 px-2 py-1 rounded border border-white/20">2024</span>
+          <span className="text-xs font-semibold bg-white/20 text-white px-2.5 py-1 rounded font-netflix">#1 in Web Developers Today</span>
+          <span className="text-xs font-semibold bg-white/16 text-gray-200 px-2 py-1 rounded border border-white/20 font-netflix">2024</span>
         </div>
-        <p className="text-lg text-white max-w-2xl font-medium drop-shadow-md mb-8">
+        <p className="text-lg text-white max-w-2xl font-medium drop-shadow-md mb-8 font-netflix">
           Passionate and detail-oriented Web Developer with hands-on experience in building responsive and user-centric websites using HTML, CSS, JavaScript, and React. Adept at translating design wireframes into high-quality code and ensuring cross-browser compatibility. Eager to contribute to dynamic teams and build impactful web applications.
         </p>
         {/* You can add CTA or other badges here if needed */}

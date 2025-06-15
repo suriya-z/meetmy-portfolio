@@ -31,7 +31,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-netflix-red text-2xl font-bold">
+            <h1 className="text-netflix-red text-2xl font-bold font-netflix">
               Suriya
             </h1>
           </div>
