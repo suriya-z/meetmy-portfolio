@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Plus, Play, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -43,7 +44,7 @@ export default function ProfileSelection() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-netflix-black text-white">
+    <main className="min-h-screen flex flex-col items-center justify-center text-white">
       <h1 className="text-3xl sm:text-4xl font-semibold mb-12 text-center">Who's watching?</h1>
       <div className="flex flex-row gap-8 mb-12">
         {PROFILES.map(profile => (
