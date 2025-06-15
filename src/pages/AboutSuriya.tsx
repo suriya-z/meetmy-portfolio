@@ -3,8 +3,8 @@ import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-const backgroundImage =
-  "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&h=1080&fit=crop";
+// Use the uploaded image as the background
+const backgroundImage = "/lovable-uploads/c08e2bb3-bee2-408c-b5fe-f99d7c88ec69.png";
 
 const AboutSuriya = () => {
   const navigate = useNavigate();
@@ -20,11 +20,24 @@ const AboutSuriya = () => {
         <ArrowLeft size={24} strokeWidth={2.2} />
         <span className="sr-only">Back</span>
       </button>
-      {/* Background Image with Overlay */}
+      {/* Custom Background Image with Gradient Overlay */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(20,20,20,0.85) 40%, rgba(20,20,20,0.35)), url('${backgroundImage}')`,
+          backgroundImage: `
+            linear-gradient(
+              to right, 
+              rgba(20,20,20,0.96) 0%, 
+              rgba(20,20,20,0.85) 30%, 
+              rgba(20,20,20,0.6) 50%,
+              rgba(20,20,20,0.18) 75%,
+              rgba(20,20,20,0.02) 100%
+            ), 
+            url('${backgroundImage}')
+          `,
+          backgroundSize: "cover",
+          backgroundPosition: "left center",
+          backgroundRepeat: "no-repeat",
         }}
       />
       {/* Content */}
