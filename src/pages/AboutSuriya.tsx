@@ -94,8 +94,8 @@ const AboutSuriya = () => {
           Resume
         </button>
       </div>
-      {/* Move MyProjectsSection (including neon curve) so it's "pulled up" to touch the content above & portrait */}
-      <div className="relative z-30 -mt-12">
+      {/* MyProjectsSection directly below content, spaced */}
+      <div className="relative z-30 mt-8">
         <MyProjectsSection />
       </div>
     </div>
