@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowLeft, Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -65,18 +64,17 @@ const AboutSuriya = () => {
       <div
         className="
           relative z-20 flex flex-col justify-center
-          pl-6 sm:pl-10 md:pl-16 lg:pl-24
-          pr-4
+          px-6 sm:pl-10 md:pl-16 lg:pl-24
           pt-28 pb-4
           w-full
-          max-w-[50vw]
+          max-w-full sm:max-w-[50vw]
           text-center sm:text-left
         "
       >
-        <h1 className="text-white text-5xl sm:text-7xl font-bold leading-tight drop-shadow-[2px_2px_4px_rgba(0,0,0,.8)] netflix-text-shadow font-netflix">
+        <h1 className="text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-tight drop-shadow-[2px_2px_4px_rgba(0,0,0,.8)] netflix-text-shadow font-netflix">
           Suriya
         </h1>
-        <div className="flex items-center gap-4 my-4 justify-center sm:justify-start">
+        <div className="flex items-center gap-4 my-4 justify-center sm:justify-start flex-wrap">
           <span className="text-xs font-bold bg-white/20 text-white px-2.5 py-1 rounded font-netflix">
             Web Developer
           </span>
@@ -84,7 +82,7 @@ const AboutSuriya = () => {
             Web Designer
           </span>
         </div>
-        <p className="text-lg text-white max-w-2xl font-medium drop-shadow-md mb-8 font-netflix">
+        <p className="text-base sm:text-lg text-white max-w-2xl font-medium drop-shadow-md mb-8 font-netflix mx-auto sm:mx-0">
           Passionate and detail-oriented Web Developer with hands-on experience in building responsive and user-centric websites using HTML, CSS, JavaScript, and React. Adept at translating design wireframes into high-quality code and ensuring cross-browser compatibility. Eager to contribute to dynamic teams and build impactful web applications.
         </p>
         {/* Resume Button styled as Play */}
