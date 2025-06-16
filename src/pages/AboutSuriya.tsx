@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowLeft, Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -69,12 +70,13 @@ const AboutSuriya = () => {
           pt-28 pb-4
           w-full
           max-w-[50vw]
+          text-center sm:text-left
         "
       >
         <h1 className="text-white text-5xl sm:text-7xl font-bold leading-tight drop-shadow-[2px_2px_4px_rgba(0,0,0,.8)] netflix-text-shadow font-netflix">
           Suriya
         </h1>
-        <div className="flex items-center gap-4 my-4">
+        <div className="flex items-center gap-4 my-4 justify-center sm:justify-start">
           <span className="text-xs font-bold bg-white/20 text-white px-2.5 py-1 rounded font-netflix">
             Web Developer
           </span>
@@ -86,13 +88,15 @@ const AboutSuriya = () => {
           Passionate and detail-oriented Web Developer with hands-on experience in building responsive and user-centric websites using HTML, CSS, JavaScript, and React. Adept at translating design wireframes into high-quality code and ensuring cross-browser compatibility. Eager to contribute to dynamic teams and build impactful web applications.
         </p>
         {/* Resume Button styled as Play */}
-        <button
-          className="netflix-button flex items-center gap-2 text-lg w-fit mb-0"
-          onClick={handleResumeDownload}
-        >
-          <Play size={20} fill="white" />
-          Resume
-        </button>
+        <div className="flex justify-center sm:justify-start">
+          <button
+            className="netflix-button flex items-center gap-2 text-lg w-fit mb-0"
+            onClick={handleResumeDownload}
+          >
+            <Play size={20} fill="white" />
+            Resume
+          </button>
+        </div>
       </div>
       {/* MyProjectsSection directly below content, spaced */}
       <div className="relative z-30 mt-8">
