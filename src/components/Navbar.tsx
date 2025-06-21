@@ -19,7 +19,6 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'Projects', href: '/projects', isRoute: true },
     { name: 'About Me', href: '#about' },
     { name: 'Resume', href: '#resume' },
     { name: 'Contact', href: '#contact' },
